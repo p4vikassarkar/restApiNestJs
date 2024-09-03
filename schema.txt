@@ -1,0 +1,56 @@
+Table user{
+    id : number
+    fullname: string
+    role: enum [admin, customer]
+    email: string
+    password: string
+    address:string
+    phone:number
+    created_at: timestamp
+}
+Table products{
+    id : number
+    code: string
+    name: string
+    description: string
+    image_url: string
+    image_name::string
+    price: float
+    created_at: timestamp
+}
+Table cart{
+    id : number
+    user_id:string
+    product_id: string
+    product_code: string
+    product_name: string
+    quantity:number
+    created_at: timestamp
+}
+
+// multiple products then loop to insert
+Table ordering{
+    id : number
+    user_id:string
+    customer_id:number
+    customer_fullname:string
+    product_id: string, string, string
+    product_code: string, string, string
+    product_name: string, string, string
+    quantity:number, number, number
+    price: float, float, float
+    total_price: float
+    created_at: timestamp
+}
+
+// payment through wizard or just to record
+Table transaction{
+    id : number
+    user_id:string
+    customer_id:number
+    customer_fullname:string
+    type:enum [cash, ol, paylater]
+    payment_status:enum [success, success/failure, inprogess]
+    amount:float
+    created_at: timestamp
+}

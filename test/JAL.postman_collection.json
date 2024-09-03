@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "ef9de5dc-60e5-4ee8-859c-70e78cefc6ed",
+		"name": "JAL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "650932"
+	},
+	"item": [
+		{
+			"name": "getproducts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Mjc2ZTc1MmRkODAxNGQyY2RmN2EyZCIsImlhdCI6MTcxMzg2MDM3OSwiZXhwIjoxNzE0MTE5NTc5fQ.YcjXmPwTDVWPH__4Hgh59klnmsxiITb1mnXm2M1Yqd8",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/product"
+			},
+			"response": []
+		},
+		{
+			"name": "getCartItems",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Mjc2ZTc1MmRkODAxNGQyY2RmN2EyZCIsImlhdCI6MTcxMzg2MDM3OSwiZXhwIjoxNzE0MTE5NTc5fQ.YcjXmPwTDVWPH__4Hgh59klnmsxiITb1mnXm2M1Yqd8",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/cart"
+			},
+			"response": []
+		},
+		{
+			"name": "getproducts/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/product/6627f0eb4e53317bc7b84c23"
+			},
+			"response": []
+		},
+		{
+			"name": "createproducts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Mjc2ZTc1MmRkODAxNGQyY2RmN2EyZCIsImlhdCI6MTcxMzg2MDM3OSwiZXhwIjoxNzE0MTE5NTc5fQ.YcjXmPwTDVWPH__4Hgh59klnmsxiITb1mnXm2M1Yqd8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": { "code": "222abc",    "description": "25 liter water cane with normal water",    "name": "water Cane 2",    "price": 70,    "imageUrl": "/upload",    "imageName": "water_cane_2"},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/product"
+			},
+			"response": []
+		},
+		{
+			"name": "addtocart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Mjc5ZDdlNzJiN2YzNjgzMDBkYzUyMiIsImlhdCI6MTcxMzg5NTQ5NSwiZXhwIjoxNzE0MTU0Njk1fQ.IRXpZAm8Py_Mgrn8_YGllRrZUOY86R57jbYvXPaY7kI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{    "productId": "6627f1044e53317bc7b84c26",    "quantity": 25}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/cart"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    "email": "pooja@gmail.com",    "password": "poo@1234"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    "name":"pooja rathore",    "email":"pooja@gmail.com",    "password":"poo@1234"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/auth/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "get product?page=2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/product?page=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getproduct?keyword=2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/product?keyword=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProduct",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Mjc5ZDdlNzJiN2YzNjgzMDBkYzUyMiIsImlhdCI6MTcxMzg3MjI3MiwiZXhwIjoxNzE0MTMxNDcyfQ.icePqvdrF3JvyfU5vOf90TP2ai3eI1B_P2hZmjRz1C8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": {    "code": "111abc",    "description": "25 liter water cane with chilled water",    "name": "water Cane 1",    "price": 75,    "image_main_url": "/upload",    "image_main_name": "water_cane_1"},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/product/66279d5172b7f368300dc520"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteProduct",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Mjc5ZDdlNzJiN2YzNjgzMDBkYzUyMiIsImlhdCI6MTcxMzg3MjI3MiwiZXhwIjoxNzE0MTMxNDcyfQ.icePqvdrF3JvyfU5vOf90TP2ai3eI1B_P2hZmjRz1C8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{    "code": "111abc",    "description": "25 liter water cane with chilled water",    "name": "water Cane 1",    "price": 70,    "image_main_url": "/upload",    "image_main_name": "water_cane_1"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/product/66279d5172b7f368300dc520"
+			},
+			"response": []
+		}
+	]
+}
